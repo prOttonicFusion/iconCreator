@@ -18,7 +18,7 @@ directories = ["base", "linux", "mac"]
 
 # Input file from CLI argument
 if (len(sys.argv) != 2):
-    print("Expected 1 command line argument, got {}".format(len(sys.argv)-1))
+    print("Usage: {} <input-image-file>".format(sys.argv[0]))
     exit()
 
 infile = sys.argv[1]
