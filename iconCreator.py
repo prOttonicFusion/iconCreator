@@ -11,9 +11,10 @@
 import os
 import sys
 from PIL import Image
+from pathlib import Path
 
 # Output directories
-directories = ["icons/base/", "icons/linux/", "icons/mac/"]
+directories = ["base", "linux", "mac"]
 
 # Input file from CLI argument
 if (len(sys.argv) != 2):
@@ -33,10 +34,11 @@ def addMargin(image, topMargin, leftMargin, bottomMargin, rightMargin):
 
 for dir in directories:
     # Create output directory structure if not exists
-    if not os.path.exists(dir):
-        os.makedirs(dir)
+    pathToDir = Path("icons") / Path(dir)
+    if not os.path.exists(pathToDir):
+        os.makedirs(pathToDir)
 
-    if 'base' in dir:
+    if dir == 'base':
         # General icons
         imgSizes = [16, 24, 32, 48, 64]
     else:
@@ -44,7 +46,7 @@ for dir in directories:
         imgSizes = [128, 256, 512, 1024]
 
     for size in imgSizes:
-        outfile = dir + str(size) + ".png"
+        outfile = pathToDir / Path(str(size) + ".png")
         try:
             with Image.open(infile) as im:
                 # Scale & convert image
