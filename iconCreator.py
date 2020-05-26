@@ -61,7 +61,7 @@ for dir in directories:
         print("Created: ", outfile)
 
 # Finally create Windows ICO file
-outfile = "icons/Icon.ico"
+outfile = Path("icons") / Path("Icon.ico") 
 try:
     # Scale & convert image
     with Image.open(infile) as im:
