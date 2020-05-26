@@ -1,5 +1,5 @@
 # iconCreator
-Creating icon sets manually can be a real hassle. This script makes it easier by converting a single image file into complete icon sets for use on
+Creating application icons by manually scaling images can be a real hassle. This script makes it easier by converting a single image file into complete icon sets for use on
 - Windows (i.e. a `Icon.ico` file)
 - MacOS (complete with the recommended transparent margin)
 - Most Linux distros
