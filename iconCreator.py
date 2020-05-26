@@ -1,12 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# Script for creating a set of ICO-files from a single NxN pixel image
+# Script for creating a set of icon from a single NxN pixel image
 # Usage: python iconCreator.py image-file.png
 #
-# @Date    : 2020-04-05 23:31:12
-# @Author  : Otto Lindblom
-# @Link    : link
 
 import os
 import sys
