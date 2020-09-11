@@ -45,16 +45,16 @@ for dir in directories:
     for size in imgSizes:
         outfile = pathToDir / Path(str(size) + ".png")
         try:
-            with Image.open(infile) as im:
+            with Image.open(infile) as img:
                 # Scale & convert image
 
                 if 'mac' in dir:
                     # Add ~5% margin to Mac icons
-                    m = int(im.size[0]*0.05)
-                    im = addMargin(im, m, m, m, m)
+                    m = int(img.size[0]*0.05)
+                    img = addMargin(img, m, m, m, m)
 
-                im.thumbnail((size, size))
-                im.save(outfile)
+                img.thumbnail((size, size))
+                img.save(outfile)
         except IOError:
             print("unable to process ", infile)
             exit()
@@ -64,8 +64,8 @@ for dir in directories:
 outfile = Path("icons") / Path("Icon.ico") 
 try:
     # Scale & convert image
-    with Image.open(infile) as im:
-        im.save(outfile)
+    with Image.open(infile) as img:
+        img.save(outfile)
 except IOError:
     print("unable to process ", infile)
     exit()
