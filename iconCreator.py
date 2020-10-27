@@ -56,8 +56,9 @@ for dir in directories:
                 img.thumbnail((size, size))
                 img.save(outfile)
         except IOError:
-            print("unable to process ", infile)
+            print("Unable to process", infile)
             exit()
+            
         print("Created: ", outfile)
 
 # Finally create Windows ICO file
@@ -67,7 +68,7 @@ try:
     with Image.open(infile) as img:
         img.save(outfile)
 except IOError:
-    print("unable to process ", infile)
+    print("Unable to process", infile)
     exit()
 print("Created: ", outfile)
 print("Done!")
