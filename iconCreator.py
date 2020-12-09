@@ -22,6 +22,7 @@ infile = sys.argv[1]
 
 
 def addMargin(image, topMargin, leftMargin, bottomMargin, rightMargin):
+    """Pad image with margin of defined size"""
     newWidth = image.size[0] + rightMargin + leftMargin
     newHeight = image.size[1] + topMargin + bottomMargin
     newImage = Image.new(image.mode, (newWidth, newHeight), (255, 255, 255, 0))
@@ -61,7 +62,7 @@ for dir in directories:
             
         print("Created: ", outfile)
 
-# Finally create Windows ICO file
+# Windows ICO file
 outfile = Path("icons") / Path("Icon.ico") 
 try:
     # Scale & convert image
@@ -71,4 +72,5 @@ except IOError:
     print("Unable to process", infile)
     exit()
 print("Created: ", outfile)
+
 print("Done!")
